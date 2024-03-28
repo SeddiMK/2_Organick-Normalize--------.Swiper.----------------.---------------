@@ -1,0 +1,505 @@
+//====================================================================================================
+.header {
+	position: relative;
+	z-index: 50;
+	top: 0;
+	left: 0;
+	width: 100%;
+	max-height: 120px;
+	padding: 24px 0;
+
+	&._header-scroll {
+		position: fixed;
+		transform: translate(0px, -100%);
+		background-color: rgba(255, 255, 255, 0.8);
+	}
+
+	&._header-show {
+		transition: transform 0.3s ease 0s;
+		transform: translate(0px, 0px);
+	}
+
+	/* .header__container */
+	@media (max-width: 1024px) {
+		&__nav {
+			order: 3;
+		}
+	}
+
+	&__container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	/* .header__logo */
+
+	&__logo {
+		position: relative;
+		top: 0;
+		left: 0;
+		margin-right: 8px;
+		width: 200px;
+		height: 56px;
+		@include adaptiveValue("width", 200, 150);
+		@include adaptiveValue("height", 56, 40);
+	}
+
+	/* .header__logo-img */
+
+	&__logo-img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+	}
+
+	/* .header__nav */
+
+	&__nav {
+		padding-right: 15px;
+	}
+
+	/* .header__cart */
+
+	&__cart {}
+}
+
+.cart {
+	position: relative;
+	top: 0;
+	left: 0;
+	// width: 100%;
+	// max-width: 159px;
+
+	display: inline-flex;
+	align-items: center;
+	justify-content: space-between;
+	font-weight: 400;
+	font-size: 17px;
+	line-height: 169%;
+	letter-spacing: 0.36px;
+	color: $mainColor;
+	border: 1px solid #d4d4d4;
+
+	border-radius: 33px;
+	padding: 7px;
+	@include adaptiveValue("padding-right", 31, 20);
+	margin-right: 10px;
+
+	transition: color 0.3s ease 0s;
+
+	&:hover {
+		//color: $mainTitle;
+	}
+
+
+	/* .cart__svg */
+	&__svg {
+		color: inherit;
+		margin-right: 10px;
+		cursor: pointer;
+		transition: color 0.06s ease 0s;
+		@include adaptiveValue("width", 56, 28);
+		@include adaptiveValue("height", 56, 28);
+
+
+		svg {
+			fill: currentColor;
+		}
+	}
+
+	// /* .cart__img */
+	// &__img {}
+
+	/* .cart__title */
+	&__title {
+		margin-right: 23px;
+		cursor: pointer;
+
+	}
+
+	/* .cart__quantity */
+
+	&__quantity {
+		position: absolute;
+		right: 15px;
+		top: 50%;
+		transform: translateY(-50%);
+		color: #fff;
+		background-color: $mainColor;
+		border-radius: 100%;
+		padding: 3px;
+		min-height: 22px;
+		min-width: 22px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-weight: 400;
+		font-size: 17px;
+		line-height: 1px;
+		text-align: center;
+		letter-spacing: 0.36px;
+	}
+}
+
+.cart.active:hover {
+	cursor: pointer;
+	color: $mainTitle;
+}
+
+
+
+// ================================= Cart корзина ===========
+.cart-content {
+	//display: none;
+	cursor: default;
+	position: absolute;
+	right: 0;
+	top: calc(100% + 26px);
+	width: 490px;
+	background-color: #fff;
+	box-shadow: 0 4px 4px rgba(135, 135, 135, 0.25);
+
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.3s ease 0s, visibility 0.3s ease 0s;
+
+	/* .cart-content__list */
+	&__list {
+		max-height: 330px;
+
+		.simplebar-track.simplebar-vertical {
+			width: 4px;
+			background-color: rgba(77, 77, 77, 0.1);
+			border-radius: 5px;
+			margin-top: 20px;
+			height: calc(100% - 40px);
+			right: 5px;
+		}
+	}
+
+	/* .cart-content__item */
+
+	&__item {}
+
+	/* .cart-content__product-ibg */
+
+	&__product-ibg {}
+
+	/* .cart-content__bottom */
+
+	&__bottom {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 15px;
+	}
+
+	/* .cart-content__fullprice */
+
+	&__fullprice {
+		display: flex;
+		flex-direction: column;
+		padding: 0 15px;
+
+		span {
+			font-weight: 400;
+			font-size: 22px;
+			line-height: 160%;
+			letter-spacing: 0.36px;
+			color: $mainColor;
+		}
+	}
+
+	/* .cart-content__btn */
+
+	&__btn {
+		margin-right: 15px;
+		background-color: $mainColor;
+		color: #fff;
+		padding: 15px 15px;
+		padding-left: 32px;
+		min-width: rem(157);
+		text-align: left;
+	}
+}
+
+.cart.active:hover .cart-content {
+	opacity: 1;
+	visibility: visible;
+	transition: opacity 0.3s ease 0s, visibility 0.3s ease 0s;
+}
+
+.card-product {
+	display: flex;
+	align-items: center;
+	padding: 15px 20px;
+	padding-right: 13px;
+	transition: background-color 0.3s;
+
+	&:hover {
+		background: rgba(93, 113, 221, 0.1);
+		transition: background-color 0.3s;
+	}
+
+	/* .card-product__img */
+	&__img {
+		max-width: 100px;
+		max-height: 100px;
+		object-fit: cover;
+		margin-right: rem(20);
+	}
+
+	/* .card-product__text */
+
+	&__text {}
+
+	/* .card-product__title */
+
+	&__title {
+		max-width: 280px;
+		margin-bottom: 10px;
+		font-weight: 400;
+		font-size: 22px;
+		line-height: 160%;
+		letter-spacing: 0.36px;
+		color: $mainColor;
+	}
+
+	/* .card-product__price */
+
+	&__price {
+		font-family: 'OpenSans';
+		font-style: normal;
+		font-weight: 700;
+		font-size: 18px;
+		line-height: 180%;
+		letter-spacing: 0.36px;
+		color: $mainColor;
+	}
+
+	/* .card-product__delete */
+
+	&__delete {
+		width: 30px;
+		height: 30px;
+		margin-left: auto;
+		background-color: transparent;
+		padding: 0;
+		margin-right: 20px;
+		background-image: url('@img/cart/trash.svg');
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+		cursor: pointer;
+	}
+}
+
+.fullprice {
+	font-family: 'OpenSans';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 18px;
+	line-height: 180%;
+	letter-spacing: 0.36px;
+	color: $mainColor;
+
+
+}
+
+
+
+.simplebar-track.simplebar-vertical .simplebar-scrollbar::before {
+	background-color: rgba(77, 77, 77, 0.1);
+	border-radius: 5px;
+	width: 100%;
+	opacity: 1;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+}
+
+//==== Burger Max Grafh======
+.nav {
+
+	&__item {
+		font-weight: 400;
+		font-size: 20px;
+		line-height: 160%;
+		letter-spacing: 0.36px;
+		color: $mainColor;
+		text-transform: capitalize;
+
+		&:hover {
+			color: $mainTitle;
+		}
+	}
+}
+
+.nav__list {
+	list-style: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+
+}
+
+.nav__item {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+}
+
+.nav__item:not(:last-child) {
+	@include adaptiveValue("margin-right", 30, 20, 1920, 1024, 1);
+
+}
+
+.burger {
+	position: relative;
+
+	width: 30px;
+	height: 20px;
+	display: none;
+	border: none;
+	padding-right: 15px;
+	background-color: transparent;
+	cursor: pointer;
+}
+
+.burger__line {
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 100%;
+	height: 2px;
+	background-color: #000;
+	transform: translateY(-50%);
+	transition: opacity 0.3s ease-in-out;
+}
+
+.burger::before,
+.burger::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	background-color: #000;
+	transition: transform 0.3s ease-in-out, top 0.3s ease-in-out, bottom 0.3s ease-in-out;
+}
+
+.burger::before {
+	top: 0;
+}
+
+.burger::after {
+	bottom: 0;
+}
+
+.burger--active .burger__line {
+	opacity: 0;
+}
+
+.burger--active::before {
+	top: 50%;
+	transform: rotate(45deg);
+}
+
+.burger--active::after {
+	bottom: auto;
+	top: 50%;
+	transform: rotate(-45deg);
+}
+
+.stop-scroll {
+	overflow: hidden;
+}
+
+@media (max-width: 1024px) {
+	.burger {
+		display: block;
+	}
+
+	.nav {
+		--header-height: 120px;
+		position: fixed;
+
+		//top: var(--header-height);
+		@include adaptiveValue("top", 120, 94);
+		padding-bottom: rem(30);
+		padding-right: rem(15);
+		padding-left: rem(15);
+		z-index: 1000;
+		overflow-y: scroll;
+
+		width: 60%;
+		max-width: 300px;
+		height: calc(100vh - var(--header-height));
+		background-color: $mainBg;
+		transform: translateX(100%);
+		//right: -100%;
+		right: 0;
+
+		//transition: transform 0.6s ease-in-out;
+		//transition: right 0.6s ease-in-out;
+	}
+
+	.transition {
+		transition: transform 0.6s ease-in-out;
+	}
+
+	.nav--visible {
+		transform: none;
+		//right: 40%;
+	}
+
+	.nav__list {
+		flex-direction: column;
+	}
+
+	.nav__item {
+		width: 100%;
+	}
+
+	.nav__item:not(:last-child) {
+		margin-right: 0;
+	}
+
+	.nav__link {
+		display: inline-block;
+		width: 100%;
+		padding: 20px 30px;
+		//border-bottom: 1px solid $;
+		font-size: 20px;
+
+		&:hover {
+			color: $mainTitle;
+		}
+	}
+}
+
+.burger--active .burger__line {
+	opacity: 0;
+}
+
+.burger--active::before {
+	top: 50%;
+	transform: rotate(45deg);
+}
+
+.burger--active::after {
+	bottom: auto;
+	top: 50%;
+	transform: rotate(-45deg);
+}
+
+.stop-scroll {
+	overflow: hidden;
+}

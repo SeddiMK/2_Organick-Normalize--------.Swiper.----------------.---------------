@@ -1,0 +1,35 @@
+.hero {
+  //margin-top: rem(120);
+  height: 100vh;
+  min-height: 760px;
+  background-image: url('@img/welcome/bg-welcome.jpg');
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: $mainBg;
+}
+
+.welcome {
+
+  /* .welcome__container */
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    @include adaptiveValue("padding-top", 220, 100);
+  }
+
+  /* .welcomes__title */
+
+  &__titles {
+    max-width: 550px;
+    //@include adaptiveValue("padding-top", 220, 100);
+
+
+    &:not(:last-child) {
+      margin-bottom: rem(30);
+    }
+  }
+}

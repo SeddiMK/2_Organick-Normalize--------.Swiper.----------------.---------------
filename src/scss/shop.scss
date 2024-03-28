@@ -1,0 +1,275 @@
+.shop {
+  @include adaptiveValue("margin-bottom", 120, 30);
+  /* .shop__container */
+
+  &__container {
+    display: flex;
+    justify-content: center;
+
+  }
+
+  /* .shop__content */
+
+  &__content {
+    width: 100%;
+  }
+
+  /* .shop__card */
+
+  &__card {}
+}
+
+.shop {
+
+  /* .shop__titles */
+
+  &__titles {}
+}
+
+
+
+
+.card-shop {
+
+  /* .card-shop__grid */
+
+  &__grid {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 447px));
+    gap: 19px;
+
+    margin-bottom: rem(30);
+  }
+
+  /* .card-shop__item */
+  &__item {}
+}
+
+.item-grid {
+  text-align: left;
+  padding: 30px;
+  padding-bottom: 20px;
+  background-color: $mainBg;
+  border-radius: 30px;
+  /* .item-grid__type-food */
+
+  &__type-food {
+    position: relative;
+
+    top: 0;
+    left: 0;
+    z-index: 5;
+    background-color: $mainColor;
+    border-radius: 8px;
+    padding: 5px 20px;
+    font-family: 'OpenSans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 180%;
+    letter-spacing: 0.36px;
+    color: #FFFFFF;
+
+  }
+
+  /* .item-grid__image */
+
+  &__image-ibg {
+    padding-top: 97.67%;
+    margin-bottom: 20px;
+  }
+
+  /* .item-grid__img-ibg */
+
+  &__img {}
+
+  /* .item-grid__name-food */
+
+  &__name-food {
+    display: block;
+    border-bottom: 1px solid #B8B8B8;
+    font-weight: 400;
+    @include adaptiveValue("font-size", 22, 18);
+    line-height: 160%;
+    letter-spacing: 0.36px;
+    color: $mainColor;
+    text-transform: capitalize;
+
+    &:not(:last-child) {
+      margin-bottom: rem(10);
+    }
+
+  }
+
+  /* .item-grid__props */
+
+  &__props {}
+
+  /* .item-grid__price */
+
+  &__price {}
+
+  /* .item-grid__rating */
+
+
+}
+
+.price-item {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+  /* .price-item__old */
+
+  &__old {
+    font-family: 'OpenSans';
+    font-weight: 400;
+    @include adaptiveValue("font-size", 17, 15);
+    line-height: 191%;
+    letter-spacing: 0.36px;
+    text-decoration-line: line-through;
+    color: #B8B8B8;
+
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+  }
+
+  /* .price-item__current */
+
+  &__current {
+    font-family: 'OpenSans';
+    font-weight: 700;
+    @include adaptiveValue("font-size", 18, 16);
+    line-height: 180%;
+    letter-spacing: 0.36px;
+    color: $mainColor;
+
+    &:not(:last-child) {
+      margin-right: auto;
+    }
+  }
+
+  &__rating {
+
+    // fill: currentColor;
+
+    // fill: #FFA858;
+
+    // svg {
+    //   @include adaptiveValue("width", 16, 15);
+    //   @include adaptiveValue("height", 16, 15);
+    // }
+  }
+}
+
+.item-grid__btn {
+  padding: 17px;
+  padding-right: 40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 100%;
+  background-color: $mainColor;
+  color: #ffffff;
+
+  &:disabled {
+    opacity: 0.4;
+    pointer-events: none;
+  }
+}
+
+// =================== Звездный рейтинг==================================
+.rating {
+  display: flex;
+  align-items: flex-end;
+  @include adaptiveValue("font-size", 26, 22);
+  line-height: 0.75;
+  transition: opacity 0.3s ease 0s;
+}
+
+.rating.rating_sending {
+  opacity: 0.2;
+}
+
+.rating.rating_set .rating__active,
+.rating.rating_set .rating__item {
+  cursor: pointer;
+}
+
+.rating__body {
+  position: relative;
+}
+
+.rating__body::before {
+  content: "★★★★★";
+  display: block;
+}
+
+.rating__active {
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.rating__active::before {
+  content: "★★★★★";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  color: #FFA858;
+}
+
+.rating__items {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.rating__item {
+  flex: 0 0 20%;
+  height: 100%;
+  opacity: 0;
+}
+
+.rating__value {
+  font-size: 70%;
+  line-height: 0.8;
+  padding: 0px 0px 0px 10px;
+}
+
+//=============================show-more======
+.btn-center {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+}
+
+.show-more {
+  //width: 100%;
+
+  border-radius: 10px;
+  background-color: $mainColor;
+  color: #ffffff;
+  padding: 10px 40px;
+}
+
+.item-grid:nth-child(n + 7) {
+  display: none;
+}
+
+.item-grid.is-visible {
+  display: grid;
+}

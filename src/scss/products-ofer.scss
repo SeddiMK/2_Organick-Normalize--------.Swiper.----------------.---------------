@@ -1,0 +1,93 @@
+.products-ofer {
+  background-color: $mainColor;
+
+  @include adaptiveValue("padding-top", 140, 30);
+  @include adaptiveValue("padding-bottom", 140, 30);
+  /* .products-ofer__container */
+
+  &__container {}
+
+  /* .products-ofer__top */
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: rem(44);
+
+    @media (max-width:$mobileSmall) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  /* .products-ofer__titles */
+
+  &__titles {
+    @media (max-width:$mobileSmall) {
+      text-align: center;
+      margin-bottom: rem(30);
+    }
+
+  }
+
+  /* .products-ofer__btn */
+
+  &__btn {}
+
+  /* .products-ofer__card */
+
+  &__card {}
+}
+
+
+.products-ofer {
+
+  /* .products-ofer__btn */
+
+  &__btn {}
+}
+
+.btn {}
+
+.btn--yelow {}
+
+.btn--hover {}
+
+.card-shop {
+
+  /* .card-shop__grid */
+
+  &__grid {}
+
+  /* .card-shop__item */
+
+  &__item {}
+}
+
+.item-grid {
+
+  /* .item-grid__type-food */
+
+  &__type-food {}
+
+  /* .item-grid__image-ibg */
+
+  &__image-ibg {}
+
+  /* .item-grid__img */
+
+  &__img {}
+
+  /* .item-grid__name-food */
+
+  &__name-food {}
+
+  /* .item-grid__props */
+
+  &__props {}
+
+  /* .item-grid__price */
+
+  &__price {}
+}

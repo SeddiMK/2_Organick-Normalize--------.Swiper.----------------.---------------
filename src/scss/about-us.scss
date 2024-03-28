@@ -1,0 +1,128 @@
+.about-us {
+
+  background-color: $mainBg;
+  @include adaptiveValue("margin-bottom", 120, 30);
+
+  /* .about-us__container */
+  &__container {}
+
+  /* .about-us__content */
+  &__content {
+    @include adaptiveValue("padding-top", 130, 10, 1920, 768, 1);
+    @include adaptiveValue("padding-bottom", 140, 30);
+
+    @media (min-width:$mobile) {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  /* .about-us__image-ibg */
+  &__image-ibg {
+    flex: 1 1 50%;
+    display: flex;
+    align-items: center;
+    padding-top: 56.25%;
+    max-width: 675px;
+    overflow: hidden;
+
+    @media (max-width:$mobile) {
+      padding-top: 95.1111111%;
+    }
+  }
+
+  /* .about-us__img */
+  &__img {}
+
+  /* .about-us__right */
+  &__right {
+    flex: 1 1 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 0px 15px;
+  }
+}
+
+.right-about {
+
+  /* .right-about__titles */
+  &__titles {}
+
+  /* .right-about__text */
+
+  &__text {
+    font-family: 'OpenSans';
+    font-style: normal;
+    font-weight: 400;
+    @include adaptiveValue("font-size", 18, 14);
+    line-height: 180%;
+    letter-spacing: 0.36px;
+    color: $mainText;
+
+    &:not(:last-child) {
+      margin-bottom: rem(56);
+    }
+  }
+
+  /* .right-about__block */
+
+  &__block {
+    margin-bottom: rem(50);
+  }
+}
+
+
+.advantages {
+  display: flex;
+  align-items: center;
+
+  &:not(:last-child) {
+    margin-bottom: rem(30);
+  }
+
+  /* .advantages__icon */
+
+  &__icon-ibg {
+    min-width: 100px;
+    height: 100px;
+    border-radius: 20px;
+    margin-right: rem(20);
+  }
+
+  /* .advantages__img */
+
+  &__img {}
+
+  /* .advantages__text */
+
+  &__text {}
+
+  /* .advantages__title */
+
+  &__title {
+    font-weight: 400;
+    @include adaptiveValue("font-size", 25, 18);
+    line-height: 140%;
+    letter-spacing: 0.36px;
+    color: $mainColor;
+
+
+    &:not(:last-child) {
+      margin-bottom: rem(9);
+    }
+  }
+
+  /* .advantages__subtitle */
+
+  &__subtitle {
+    font-family: 'OpenSans';
+    font-style: normal;
+    font-weight: 400;
+    @include adaptiveValue("font-size", 18, 14);
+    line-height: 180%;
+    letter-spacing: 0.36px;
+    color: $mainText;
+  }
+}

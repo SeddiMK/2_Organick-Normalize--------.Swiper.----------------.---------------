@@ -1,0 +1,64 @@
+.products {
+  @include adaptiveValue("margin-bottom", 130, 20);
+  background-color: #EFF6F1; //#EFF6F1
+  width: 100%;
+  //max-width: 1440px;
+  padding: 15px;
+  @include adaptiveValue("padding-top", 140, 30);
+  @include adaptiveValue("padding-bottom", 140, 30);
+  /* .products__row-card */
+
+  &__row-card {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 450px));
+    gap: 25px;
+  }
+
+  /* .products__card */
+
+  &__card {}
+}
+
+.card-products {
+
+  position: relative;
+  z-index: 2;
+  top: 0;
+  left: 0;
+
+  /* .card-products__bg-ibg */
+
+  &__bg-ibg {
+    width: 100%;
+    padding-top: 126%;
+  }
+
+  /* .card-products__img */
+
+  &__img {}
+
+  /* .card-products__btn-card */
+
+  &__btn-card {
+    position: absolute;
+    display: inline-block;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px 80px;
+    width: fit-content;
+
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 140%;
+    text-align: center;
+    letter-spacing: 0.36px;
+    color: $mainColor;
+    background-color: #ffffff;
+    border-radius: 20px;
+  }
+}
+
+.card-btn {}

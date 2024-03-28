@@ -1,0 +1,247 @@
+// Заголовки, общие БЄМ блоки и проче...
+
+.titles {
+  text-transform: capitalize;
+  letter-spacing: 0.36px;
+
+  /* .titles__title */
+  &__title {
+    font-family: 'Yellowtail';
+    font-style: normal;
+    font-weight: 400;
+    @include adaptiveValue("font-size", 36, 20);
+    line-height: 180%;
+    color: $mainTitle;
+  }
+
+  /* .titles__subtitle */
+  &__subtitle {
+    font-weight: 700;
+    @include adaptiveValue("font-size", 45, 20);
+    line-height: 130%;
+    color: $mainColor;
+  }
+}
+
+.titles--left {
+  padding-right: 20px;
+  text-align: left;
+}
+
+.titles--center {
+  text-align: center;
+}
+
+.titles--marbot {
+  margin-bottom: rem(42);
+}
+
+.titles--marbot-60 {
+  @include adaptiveValue("margin-bottom", 60, 20);
+}
+
+.titles--marbot-30 {
+  @include adaptiveValue("margin-bottom", 30, 20);
+}
+
+.titles__subtitle--size {
+  @include adaptiveValue("font-size", 70, 45);
+  line-height: 120%;
+}
+
+.titles__subtitle--width-margin {
+  max-width: 550px;
+  margin-bottom: rem(22);
+}
+
+.titles__subtitle--width-300 {
+  max-width: 350px;
+}
+
+.titles__subtitle--color-white {
+  color: #ffffff;
+}
+
+.btn {
+  position: relative;
+  display: inline-block;
+  bottom: 0;
+  left: 0;
+  min-width: rem(197);
+  max-height: rem(82);
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 168%;
+  letter-spacing: 0.36px;
+  text-transform: capitalize;
+  color: $mainColor;
+  transition: all 0.3s ease 0s;
+
+  //padding: 25px 71px 25px 33px;
+  @include adaptiveValue("padding-top", 25, 10);
+  @include adaptiveValue("padding-bottom", 25, 10);
+  @include adaptiveValue("padding-left", 33, 15);
+  @include adaptiveValue("padding-right", 71, 45);
+  border-radius: rem(16);
+  background-image: url('@img/btn/arrow.svg');
+  background-position: center right 10px;
+  background-size: 36px 36px;
+  background-repeat: no-repeat;
+
+  @media (max-width:$mobileSmall) {
+    width: 100%;
+  }
+
+}
+
+.btn--yelow {
+  background-color: $mainHover;
+}
+
+.btn--width {
+  max-width: rem(220);
+
+  @media (max-width:$mobileSmall) {
+    max-width: 100%;
+  }
+}
+
+.btn--border {
+  border: 1px solid $mainColor;
+  border-radius: 16px;
+}
+
+.btn--padding-min-width-bg-size {
+  padding: 17px;
+  padding-right: 40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-left: -12px;
+  min-width: rem(100);
+  background-size: 19px 19px;
+}
+
+.btn--hover {
+  &:hover {
+    background-color: $mainColor;
+    color: #ffffff;
+    transform: translateY(-3px);
+    //bottom: 3px;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+  }
+
+  &:active {
+    transform: translateY(0px);
+    //bottom: 0;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.0);
+  }
+}
+
+.btn--main-сolor {
+  background-color: $mainColor;
+  color: #FFFFFF;
+}
+
+.btn--width-about {
+  width: 100%;
+
+  @media (min-width:$mobileSmall) {
+    max-width: rem(200);
+  }
+}
+
+.btn--width-197 {
+  width: 36.02%;
+
+  @media (max-width:$mobile) {
+    min-width: 270px;
+  }
+}
+
+.btn--hover-box-shadow-white {
+  &:hover {
+    background-color: $mainColor;
+    color: #ffffff;
+    transform: translateY(-3px);
+    //bottom: 3px;
+    box-shadow: 0px 5px 10px 0px rgba(255, 255, 255, 0.5);
+  }
+
+  &:active {
+    transform: translateY(0px);
+    //bottom: 0;
+    box-shadow: 0px 5px 10px 0px rgba(255, 255, 255, 0);
+  }
+}
+
+.btn--hover-yellow {
+  &:hover {
+    background-color: $mainHover;
+    color: #fff;
+    transform: translateY(-3px);
+    //bottom: 3px;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+  }
+
+  &:active {
+    transform: translateY(0px);
+    //bottom: 0;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.0);
+  }
+}
+
+//======================================Sswiper=========================
+.swiper-pagination-bullet {
+  // width: 10px;
+  // height: 10px;
+  // margin: 0 15px;
+  // background-color: tomato;
+  // opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  //background-color: navy;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  //display: none;
+  //position: static;
+  //margin-left: 10px;
+}
+
+.buttom {
+  position: relative;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-bottom: 20px;
+}
+
+.reviews-swiper-prev {
+  background-image: url('@img/reviews/swiper/arrow-left.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 50%;
+  //display: absolute;
+  width: 40px;
+  height: 40px;
+}
+
+.reviews-swiper-next {
+  background-image: url('@img/reviews/swiper/arrow-right.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 50%;
+
+  //display: absolute;
+  width: 40px;
+  height: 40px;
+}
+
+.swiper-container {
+  //padding-bottom: 50px;
+}
