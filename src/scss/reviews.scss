@@ -4,24 +4,25 @@
   background-repeat: no-repeat;
   background-size: cover;
 
-  @include adaptiveValue("padding-top", 130, 30);
-  @include adaptiveValue("padding-bottom", 150, 30);
+  @include adaptiveValue('padding-top', 130, 30);
+  @include adaptiveValue('padding-bottom', 150, 30);
   /* .reviews__container */
 
   &__container {
-    @include adaptiveValue("padding-left", 140, 15);
-    @include adaptiveValue("padding-right", 140, 15);
+    @include adaptiveValue('padding-left', 140, 15);
+    @include adaptiveValue('padding-right', 140, 15);
   }
 
   /* .reviews__slider */
 
   &__slider {
-    @include adaptiveValue("margin-bottom", 100, 30);
+    @include adaptiveValue('margin-bottom', 100, 30);
   }
 
   /* .reviews__wrapper */
 
-  &__wrapper {}
+  &__wrapper {
+  }
 
   /* .reviews__slide */
 
@@ -42,29 +43,28 @@
     justify-content: center;
     align-items: center;
 
-    @media (max-width:$pc) {
+    @media (max-width: $pc) {
       grid-template-columns: repeat(2, minmax(250px, auto));
     }
 
-    @media (max-width:$mobile) {
+    @media (max-width: $mobile) {
       grid-template-columns: repeat(auto-fit, minmax(250px, auto));
     }
   }
 }
 
 .reviews {
-
   /* .reviews__titles */
 
-  &__titles {}
+  &__titles {
+  }
 }
 
-
 .swiper-slide {
-
   /* .swiper-slide__person */
 
-  &__person {}
+  &__person {
+  }
 
   /* .swiper-slide__rating */
 
@@ -80,7 +80,7 @@
   &__text {
     font-family: 'OpenSans';
     font-weight: 400;
-    @include adaptiveValue("font-size", 18, 15);
+    @include adaptiveValue('font-size', 18, 15);
     line-height: 180%;
     text-align: center;
     letter-spacing: 0.36px;
@@ -93,11 +93,10 @@
 
   &__name {
     font-weight: 700;
-    @include adaptiveValue("font-size", 26, 18);
+    @include adaptiveValue('font-size', 26, 18);
     line-height: 130%;
     letter-spacing: 0.36px;
     color: $mainColor;
-
   }
 
   /* .swiper-slide__consumer */
@@ -110,12 +109,11 @@
     letter-spacing: 0.36px;
     color: $mainText;
 
-    @include adaptiveValue("padding-bottom", 96, 30);
+    @include adaptiveValue('padding-bottom', 96, 30);
   }
 }
 
 .swiper-slide {
-
   /* .swiper-slide__person */
 
   &__person {
@@ -126,42 +124,45 @@
 .person-ibg {
   padding-top: 115px;
   padding-right: 115px;
-
   /* .person-ibg__img */
 
-  &__img {}
+  &__img {
+  }
 }
 
 .rating {
-
-
   /* .rating_set */
 
-  &_set {}
+  &_set {
+  }
 
   /* .rating__body */
 
-  &__body {}
+  &__body {
+  }
 
   /* .rating__active */
 
-  &__active {}
+  &__active {
+  }
 
   /* .rating__items */
 
-  &__items {}
+  &__items {
+  }
 
   /* .rating__item */
 
-  &__item {}
+  &__item {
+  }
 
   /* .rating__value */
 
-  &__value {}
+  &__value {
+  }
 }
 
 .liked {
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -173,7 +174,7 @@
   background-color: #f1f1f1;
   border-radius: 50%;
   border: 5px solid #ffffff;
-  outline: 6px solid #7EB693;
+  outline: 6px solid #7eb693;
   min-height: 250px;
   height: 100%;
 
@@ -181,7 +182,6 @@
   &__numbers {
     font-size: 42px;
     line-height: 130%;
-
   }
 
   /* .liked__organic */
@@ -190,6 +190,5 @@
     font-family: 'OpenSans';
     font-size: 18px;
     line-height: 180%;
-
   }
 }
